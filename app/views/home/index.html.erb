@@ -1,21 +1,23 @@
 <h1 class="text-center mb-4">Welcome to my todolist app</h1>
 <%= render 'layouts/task_form'  %>
 <div class="container">
-  <ul>
+  <ul id="task-list">
   <% @categories.each do  |category|%>
-  <li><%= category.title  %></li>
-  <div class="card">
-    <ul>
-      <% category.tasks.each do |task|  %>
-      <li>
-        <%= task.title  %>
-        <% unless task.deadline.nil? %>
-          , to read: <%= task.deadline.strftime('%D')  %>
+    <li><%= category.title %></li>
+    <div class="card">
+      <ul id="<%=category.title%>-task-list">
+        <% category.tasks.each do |task|  %>
+        <li id="task-<%=task.id%>" class="removed-<%=task.status%>">
+          <%= task.title  %>
+          <% unless task.deadline.nil? %>
+            , to read: <%= task.deadline.strftime('%D')  %>
+           <% end %>
+           <span class="checkbox"><%= check_box_tag :status, true , task.status , data: { remote: true, url: task_path(task), params: { id: task.id, status: :checked}.to_param, method: "put" }%></span>
+           <%= link_to "Icone poubelle", task_path(task), remote: true, method: :delete%> <i class="fa-solid fa-trash-can"></i>
+        </li> 
         <% end %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
+      </ul>
+    </div>
   <% end %>
   </ul>
 </div>
