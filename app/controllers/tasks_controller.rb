@@ -27,11 +27,9 @@ before_action :authenticate_user!
   def edit
     @task = Task.find(params[:id])
     @categories = Category.all
-
   end
 
   def update
-    puts "je suis dans le controller"
     @task = Task.find(params[:id])
     puts params
     @task.update(task_params)

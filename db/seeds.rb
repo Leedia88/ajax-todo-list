@@ -17,3 +17,9 @@ require 'faker'
     my_task.save
   end
 end
+
+10.times do
+  my_email = Email.new(object: Faker::Games::Witcher.quote,
+                      body: Faker::Lorem.sentence(word_count: 20))
+  my_email.save
+end

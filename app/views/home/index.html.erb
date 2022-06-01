@@ -12,6 +12,7 @@
           <% unless task.deadline.nil? %>
             , to read: <%= task.deadline.strftime('%D')  %>
            <% end %>
+           <%= link_to "Edit this task", edit_task_path(@task) %>
            <span class="checkbox"><%= check_box_tag :status, true , task.status , data: { remote: true, url: task_path(task), params: { id: task.id, status: :checked}.to_param, method: "put" }%></span>
            <%= link_to "Icone poubelle", task_path(task), remote: true, method: :delete%> <i class="fa-solid fa-trash-can"></i>
         </li> 

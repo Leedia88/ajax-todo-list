@@ -2,3 +2,10 @@
     text-decoration:line-through;
     color:#232528;
     }
+
+.read-false, .read-false:hover{
+    font-weight: bold;
+}
+.read-true, .read-true:hover{
+    color:#232528;
+}

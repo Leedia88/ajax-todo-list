@@ -1,0 +1,16 @@
+<div class="container m-2 text-center">
+  <%=link_to "Recevoir un Email", emails_path, remote: true, method: :post, :class => "btn btn-primary"%>
+</div>
+<div class="row">
+  <div id="email-list" class="col">
+    <h2>Liste des Emails</h2>
+    <%@emails.each do |email|%>
+      <%= render partial: "email_object", locals: {email: email}%>
+    <%end%>
+  </div>
+  <div class="col">
+    <h2>Email sélectionné</h2>
+    <div id="email-display"></div>
+  </div>
+</div>
+</div>

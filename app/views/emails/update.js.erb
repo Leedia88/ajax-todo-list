@@ -1,0 +1,6 @@
+alert("je suis dans update");
+document.getElementById("email-display").innerHTML = "";
+document.getElementById("email-display").insertAdjacentHTML("beforeend", "<%= j render 'email_display', email: @email%>");
+if(!<%=@email.read%>){
+    document.getElementById("email-<%=@email.id%> > a").style.color = "#232528";
+}

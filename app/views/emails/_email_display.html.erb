@@ -1,0 +1,4 @@
+<h4><%=@email.object%></h4>
+<p><%=@email.body%></p>
+<%=link_to "Supprimer", email_path(email), remote: true, method: :delete, :class => "btn btn-outline-danger"%>
+<%=link_to "Marquer comme non lu", email_path(email, :read => false), remote: true, method: "put", :class => "btn btn-info"%>
