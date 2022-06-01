@@ -1,6 +1,15 @@
-alert("je suis dans update");
 document.getElementById("email-display").innerHTML = "";
 document.getElementById("email-display").insertAdjacentHTML("beforeend", "<%= j render 'email_display', email: @email%>");
-if(!<%=@email.read%>){
-    document.getElementById("email-<%=@email.id%> > a").style.color = "#232528";
+console.log(<%=@email.read%>);
+
+if (<%=@email.read%> == true){
+  document.getElementById("button-<%=@email.id%>").textContent = "Marquer comme non lu";
+  document.getElementById("link-<%=@email.id%>").style.color="black";
+  document.getElementById("link-<%=@email.id%>").style.fontWeight="400";
+} 
+else {
+  document.getElementById("button-<%=@email.id%>").textContent = "Marquer comme lu";
+  document.getElementById("link-<%=@email.id%>").style.color= "#007bff";
+  document.getElementById("link-<%=@email.id%>").style.fontWeight="bold";
+  document.getElementById("button-<%=@email.id%>").href = "/emails/<%=@email.id%>?read=true";
 }
