@@ -41,6 +41,7 @@ before_action :authenticate_user!
   end
 
   def index
+    @categories = Category.all
     @tasks = Task.all
   end
 

@@ -1,0 +1,8 @@
+<li><%= category.title %></li>
+    <div class="card">
+      <ul id="<%=category.title%>-task-list">
+        <% category.tasks.each do |task|  %>
+          <%= render partial: 'task', locals: {task: task}  %>
+        <% end %>
+      </ul>
+</div>

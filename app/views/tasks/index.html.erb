@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 
-  <%= render 'task_list' %>
+  <%= render 'layouts/task_form'  %>
+
+  <%= render partial: 'category', layout: "categories_layout", collection: @categories  %>
 
 <% end %>
-
-<%= link_to "Create a new task", new_task_path, class: "btn btn-info"  %>
