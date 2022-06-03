@@ -41,8 +41,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'faker'
 #Front end gem
+
+gem 'font-awesome-sass', '~> 4.4.0'
 gem "font-awesome-rails"
 gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -9,3 +9,9 @@
 .read-true, .read-true:hover{
     color:#232528;
 }
+
+.sticky{
+    position: sticky;
+    top: 0;
+}
+

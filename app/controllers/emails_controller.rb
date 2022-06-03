@@ -1,7 +1,7 @@
 class EmailsController < ApplicationController
 
     def index
-        @emails = Email.all.order(:id)
+        @emails = Email.all.order(:id).reverse
     end
 
     def create

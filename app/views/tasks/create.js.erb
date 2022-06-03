@@ -1,2 +1,1 @@
-alert("le fichier JS est exécuté");
 document.getElementById('<%=@task.category.title%>-task-list').insertAdjacentHTML("beforeend", "<%= j render 'task', task: @task %>");

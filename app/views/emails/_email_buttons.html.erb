@@ -1,2 +1,6 @@
-<%=link_to "Supprimer", email_path(email), remote: true, method: :delete, :class => "btn btn-outline-danger"%>
-<%=link_to "Marquer comme non lu", email_path(email, :read => false), remote: true, method: "put", :class => "btn btn-info", :id => "button-#{email.id}"%>
+<%=link_to email_path(email), remote: true, method: :delete, :class => "btn btn-outline-danger" do%>
+<i class="fa-solid fa-trash"></i>
+<%end%>
+<%=link_to email_path(email, :read => false), remote: true, method: "put", :class => "btn btn-info ml-2", :id => "button-#{email.id}" do%>
+<i id="enveloppe" class="fa-solid fa-envelope"></i>
+<%end%>

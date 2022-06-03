@@ -1,7 +1,5 @@
-alert("le fichier JS update est exécuté");
 console.log(document.getElementById("checkbox-<%=@task.id%>"));
 if (<%=@task.status%> == true) {
-    alert("je suis dans le if");
   document.getElementById('task-<%=@task.id%>').style.textDecoration ="line-through";
   document.getElementById("checkbox-<%=@task.id%>").setAttribute("data-params", "id=<%=@task.id%>&status=false");
 } 

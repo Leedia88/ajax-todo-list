@@ -1,7 +1,10 @@
 <% if user_signed_in? %>
 
   <%= render 'layouts/task_form'  %>
-
-  <%= render partial: 'category', layout: "categories_layout", collection: @categories  %>
-
+  
+  <div class="row mb-2">
+    <div class="col-6 offset-3">
+    <%= render partial: 'category', layout: "categories_layout", collection: @categories  %>
+    </div>
+  </div>
 <% end %>
