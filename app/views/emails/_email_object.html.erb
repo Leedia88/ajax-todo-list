@@ -1,4 +1,4 @@
 <p class="px-3" id="email-<%=email.id%>" onclick="" style="cursor:pointer;">
-<span><%= check_box_tag "checkbox-email-#{email.id}", 1 , false, data: { remote: true, url: email_path(email), params: { id: email.id, status: true}.to_param, method: "put"} %></span>
+<%# <span><%= check_box_tag "checkbox-email-#{email.id}", 1 , false, data: { remote: true, url: email_path(email), params: { id: email.id, status: true}.to_param, method: "put"} %><%#</span> %>
 <%=link_to email.object, email_path(email, :read => true), remote: true, method: "put", :class => "read-#{email.read}", :id => "link-#{email.id}"%></p>
 <hr id="hr-<%=email.id%>">

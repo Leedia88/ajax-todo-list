@@ -6,8 +6,8 @@
     
     
     <h2 class="offset-md-1">Liste des Emails</h2><hr>
-      <p class="px-3 offset-md-2"><%= render partial: "menu_buttons"%> 
-      </p><hr>
+      <%# <p class="px-3 offset-md-2"><%= render partial: "menu_buttons"%> 
+      <%# </p><hr> %>
       <div id="email-list">
         <%@emails.each do |email|%>
         <%= render partial: "email_object", locals: {email: email}%>
